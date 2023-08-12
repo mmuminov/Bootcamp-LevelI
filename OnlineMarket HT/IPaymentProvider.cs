@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 //IPaymentProvider interfeysidan foydalaning
 
 //unda quyidagi methodlar bo'lsin
@@ -14,11 +13,14 @@ using System.Threading.Tasks;
 //- TransferInterest ( init-only ) -har bitta trazaksiya uchun yechib olinadigan foiz 
 
 
-namespace OnlineMarket_HT.Interfaces
+namespace OnlineMarket_HT
 {
-    public interface IPaymentProvider
+    internal interface IPaymentProvider
     {
+        public double TransferInterest { get; init; }
 
-        public void Transfer(int LocalCardNumber, int DestinationCard, double PaymentSum);
+        public bool Transfer(IDebitCard sourceCard, IDebitCard destinationCard, double amount);
+
+
     }
 }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 //IDebitCard interfeysidan foydalaning
 
 //unda quyidagi propertylar bo'lsin
@@ -17,15 +16,15 @@ using System.Threading.Tasks;
 //- KapitalUzcard
 //- MillyHumo
 
-namespace OnlineMarket_HT.Interfaces
+
+namespace OnlineMarket_HT
 {
-    public interface IDebitCard
+     interface IDebitCard
     {
-        public int CardNumber { get; }
-        public string BankName { get; init; }
+        public string CardNumber { get; set; }  
+        public string BankName { get; set; }
         public double Balance { get; set; }
+
+
     }
 }
-
-
-

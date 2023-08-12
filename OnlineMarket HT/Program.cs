@@ -44,7 +44,41 @@
 //- kartada qolgan summani ekranga chiqaring
 
 
+
+//Online market kartasi va provideri
 using OnlineMarket_HT;
+
+var MarketCard = new KapitalUzcard("8600010107717125", "AloqaBank", 0);
+var provider = new UzumPaymentProvider();
+
+var OnlineMarket = new OnlineMarket(provider, MarketCard);
+
+//Marketga productlar qo'shish
+OnlineMarket.AddProduct(new Product("Shaptoli", 20_000));
+OnlineMarket.AddProduct(new Product("Tarvuz", 3_000));
+OnlineMarket.AddProduct(new Product("Katoshka", 8_000));
+OnlineMarket.AddProduct(new Product("Piyoz", 10_000));
+OnlineMarket.AddProduct(new Product("Qovun", 10_000));
+
+//foydalanuvchining shaxsiy kartasi
+var MyPersonalCard = new KapitalUzcard("86008384951739427", "UzBankN1", 700_000_000);
+
+
+//Productlar sotib olish
+Console.WriteLine(
+    OnlineMarket.BuyProduct("Qovun", 3, MyPersonalCard)
+    ? "Qovun - muvaffaqiyatli sotib olindi"
+    : "Mahsulot topilmadi yoki Balansingizda yetarli mablag' mavjud emas");
+
+Console.WriteLine(
+    OnlineMarket.BuyProduct("Shaptoli", 10, MyPersonalCard)
+    ? "Shaptoli - muvaffaqiyatli sotib olindi"
+    : "Mahsulot topilmadi yoki Balansingizda yetarli mablag' mavjud emas");
+
+Console.WriteLine($"Kartangizdagi qoldiq: {MyPersonalCard.Balance}");
+
+
+
 
 
 
