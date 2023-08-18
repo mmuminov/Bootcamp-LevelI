@@ -36,4 +36,5 @@
 //    new Money { Amount = 5.00m, Type = MoneyType.Loan, Currency = "RUB" },
 //    new Money { Amount = 100.00m, Type = MoneyType.InBalance, Currency = "UZS" }
 //};
-Console.WriteLine("hello world nima gap ishla chotkimi");
+
+
